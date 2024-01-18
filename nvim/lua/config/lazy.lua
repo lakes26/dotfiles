@@ -19,6 +19,14 @@ require("lazy").setup({
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     { 'nvim-treesitter/playground' },
 
+    -- hardtime
+    -- used for training good practice in vim by disabling rapid use of the hjkl keys
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {}
+    },
+
     -- harpoon
     {
         "ThePrimeagen/harpoon",
