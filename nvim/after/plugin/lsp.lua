@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero').preset({})
+local wk = require('which-key')
 
 lsp.preset('recommended')
 
@@ -42,5 +43,19 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+wk.register({
+    ['gd'] = 'Jump to definition',
+    ['K'] = 'LSP hover',
+    ["<leader>vws"] = 'Workspace symbol',
+    ["<leader>vd"] = 'Diagnostic',
+    ["[d"] = 'Next diagnostic',
+    ["]d"] = 'Previous diagnostic',
+    ["<leader>vca"] = 'Code actions',
+    ["<leader>vrr"] = 'Show references',
+    ["<leader>vrn"] = 'Rename symbol',
+    ["<C-h>"] = 'Help for symbol under cursor',
+
+})
 
 lsp.setup()

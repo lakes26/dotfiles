@@ -1,4 +1,5 @@
 local harpoon = require("harpoon")
+local wk = require("which-key")
 
 -- REQUIRED
 harpoon:setup()
@@ -15,3 +16,16 @@ vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+
+wk.register({
+    ["<leader>a"] = 'Append to harpoon list',
+    ["<C-E>"] = 'Show harpoon list',
+
+    ["<C-h>"] = 'Goto 1st file in harpoon list',
+    ["<C-j>"] = 'Goto 2nd file in harpoon list',
+    ["<C-k>"] = 'Goto 3rd file in harpoon list',
+    ["<C-l>"] = 'Goto 4th file in harpoon list',
+
+    ["<C-S-P>"] = 'Goto previous file in harpoon list',
+    ["<C-S-N>"] = 'Goto next file in harpoon list',
+})

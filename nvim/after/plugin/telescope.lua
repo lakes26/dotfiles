@@ -55,22 +55,25 @@ require('telescope').setup {
     }
 }
 
-vim.keymap.set('n', '<leader>fd', builtin.find_files, {})     -- "find files"
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})     -- "find files"
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})      -- "find grep"
-vim.keymap.set('n', '<leader>ft', builtin.git_files, {})      -- "find git"
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})      -- "git files"
+
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})        -- "find buffers"
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})      -- "find help"
-vim.keymap.set('n', '<leader>fp', builtin.diagnostics, {})    -- "find problems"
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})    -- "find problems"
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {}) -- "find references"
 
 wk.register({
-    f = {
-        d = 'telescope.builtin.find_files',
+    ["<leader>g"] = {
+        f = 'telescope.builtin.git_files',
+    },
+    ["<leader>f"] = {
+        f = 'telescope.builtin.find_files',
         g = 'telescope.builtin.live_grep',
-        t = 'telescope.builtin.git_files',
         b = 'telescope.builtin.buffers',
         h = 'telescope.builtin.help_tags',
-        p = 'telescope.builtin.diagnostics',
+        d = 'telescope.builtin.diagnostics',
         r = 'telescope.builtin.lsp_references',
     },
-}, { prefix = '<leader>' })
+})
