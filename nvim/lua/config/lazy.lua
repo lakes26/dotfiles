@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -14,10 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- color
-    { 'catppuccin/nvim', name = 'catppuccin' },
+    { 'catppuccin/nvim',                 name = 'catppuccin' },
 
     -- tree sitter
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     { 'nvim-treesitter/playground' },
 
     -- harpoon
@@ -30,8 +29,22 @@ require("lazy").setup({
     -- undo tree
     { 'mbbill/undotree' },
 
-    -- fugitive
-    { 'tpope/vim-fugitive'},
+    -- git
+    { 'tpope/vim-fugitive' },
+    { 'lewis6991/gitsigns.nvim' },
+
+    -- errors
+    {
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
+
+    -- telescope
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
 
     -- LSP
     {
@@ -53,16 +66,12 @@ require("lazy").setup({
             { 'hrsh7th/cmp-nvim-lsp-signature-help' },
             { 'saadparwaiz1/cmp_luasnip' },
             -- Snippets
-            { 'L3MON4D3/LuaSnip' },     -- Required
+            { 'L3MON4D3/LuaSnip' }, -- Required
             { 'rafamadriz/friendly-snippets' },
 
         }
     },
 
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
-        dependencies = { 'nvim-lua/plenary.nvim' } 
-    },
     {
         'folke/which-key.nvim',
         event = 'VeryLazy',

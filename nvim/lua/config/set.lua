@@ -3,7 +3,6 @@ vim.opt.guicursor = ""
 
 -- leader
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- line numbers
 vim.opt.nu = true
@@ -26,11 +25,11 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- searching
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
--- nice colors
--- vim.opt.termguicolors = true
+-- visual
+vim.opt.termguicolors = true
 
 -- keep a border when scrolling
 vim.opt.scrolloff = 8
@@ -45,9 +44,9 @@ vim.opt.updatetime = 50
 vim.cmd([[autocmd BufEnter,BufNewFile,BufRead * set formatoptions-=cro]])
 
 -- code folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldenable = false
 -- TODO: set additional fold options
 -- https://neovim.io/doc/user/fold.html#fold-commands
 
