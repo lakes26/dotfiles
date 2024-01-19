@@ -12,6 +12,7 @@
   "hardtime.nvim": { "branch": "main", "commit": "4ba3be553fa0b713c7b817f6d201b07d282accf3" },
   "harpoon": { "branch": "harpoon2", "commit": "2cd4e03372f7ee5692c8caa220f479ea07970f17" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "lazygit.nvim": { "branch": "main", "commit": "1e08e3f5ac1152339690140e61a4a32b3bdc7de5" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "2c1e776fd28f001438f12b1d9cee8933a0a40934" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "3ba1b92b771f33256b4969d696b82c8ae7075364" },
   "mason.nvim": { "branch": "main", "commit": "e110bc3be1a7309617cecd77bfe4bf86ba1b8134" },
