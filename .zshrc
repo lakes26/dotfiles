@@ -16,13 +16,6 @@ ZSH_THEME="robbyrussell"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-
-if [ "-z $TMUX" ]; then
-    PATH="/opt/homebrew/bin/:/opt/homebrew/sbin/:$PATH"
-    PATH="$PATH:/$HOME/bin"
-fi
-
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -81,8 +74,23 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # User configuration
 
+if [ "-z $TMUX" ]; then
+    PATH="/opt/homebrew/bin/:/opt/homebrew/sbin/:$PATH"
+    PATH="$PATH:/$HOME/bin"
+fi
+
+# source private config
+for file in $HOME/.zshrc_private/*; do
+    if [[ -f $file && -r $file ]]; then
+        source $file
+    fi
+done
+
+# enable fzf completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -94,6 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+VIM="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

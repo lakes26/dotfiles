@@ -1,0 +1,51 @@
+#!/usr/bin/env zsh
+
+get_filename() {
+    vared -p 'Input filename: ' -c filename
+    echo $filename
+}
+
+open_file() {
+
+    if [[ ! -f $1 ]]; then
+        touch "$1"
+
+        # format the file
+        {
+            echo "# Notes for $current_date"
+            echo -en "\n"
+            echo -en "\n"
+            echo -en "\n"
+            echo "Links:"
+            echo -en "\n"
+            echo "$current_date"
+        } >>"$1"
+    fi
+ 
+    nvim "$1"
+}
+
+
+current_date=$(date -v-180M +%F) 
+
+# Prompt the user if no filename is provided
+if [[ $# -eq 0 ]]; then
+    filename="note-""$current_date"
+    directory=$QUICKNOTE_DIR
+fi
+
+if [[ $# -gt 1 ]]; then
+    echo "Please provide only one filename separated by dashes, without .md extension."
+	echo "Example: quick-note file-name"
+    exit 1
+fi
+
+if [[ $# -eq 1 ]]; then
+    filename=$1
+    directory=$NOTE_DIR
+fi
+echo $NOTE_DIR
+
+open_file "$directory"'/'"$filename"'.md'
+
+
