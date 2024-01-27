@@ -37,8 +37,14 @@ yabai -m config window_gap                   0
 
 yabai -m space 1 --label web
 yabai -m space 2 --label term
+yabai -m space 3 --label messages
+yabai -m space 4 --label slack
+yabai -m space 5 --label notion
 yabai -m rule --add app="^Arc" space=web
 yabai -m rule --add app="kitty" space=term
+yabai -m rule --add app="Messages" space=messages
+yabai -m rule --add app="Slack" space=slack
+yabai -m rule --add app="Notion" space=notion
 
 # apps to not manage (ignore)
 yabai -m rule --add app="^System Preferences$" manage=off
