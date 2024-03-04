@@ -43,6 +43,9 @@ vim.opt.updatetime = 50
 -- don't continue comments on the next line
 vim.cmd([[autocmd BufEnter,BufNewFile,BufRead * set formatoptions-=cro]])
 
+vim.opt.listchars = {eol = '↵'}
+vim.opt.list = true
+
 -- code folding
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

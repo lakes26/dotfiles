@@ -46,6 +46,7 @@ require("lazy").setup({
 
     { 'tpope/vim-surround' },
     { "numToStr/Comment.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     -- git
     { 'tpope/vim-fugitive' },
