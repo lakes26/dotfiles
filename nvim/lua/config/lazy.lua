@@ -89,6 +89,13 @@ require("lazy").setup({
         }
     },
     {
+        'windwp/nvim-ts-autotag',
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+    },
+    {
         "pmizio/typescript-tools.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
         opts = {},
