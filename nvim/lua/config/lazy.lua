@@ -38,6 +38,7 @@ require("lazy").setup({
     { 'mbbill/undotree' },
 
     { 'tpope/vim-surround' },
+    { "numToStr/Comment.nvim" },
 
     -- git
     { 'tpope/vim-fugitive' },
