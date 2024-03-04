@@ -19,6 +19,11 @@ require("lazy").setup({
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     { 'nvim-treesitter/playground' },
 
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
     -- hardtime
     -- used for training good practice in vim by disabling rapid use of the hjkl keys
     {
@@ -27,6 +32,8 @@ require("lazy").setup({
         opts = {}
     },
 
+    -- copilot
+    { "zbirenbaum/copilot.lua" },
     -- harpoon
     {
         "ThePrimeagen/harpoon",
@@ -67,7 +74,6 @@ require("lazy").setup({
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
         branch = 'v3.x',
         dependencies = {
             -- LSP Support
