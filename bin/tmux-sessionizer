@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(fd . $HOME/Airgoods $HOME/repos $HOME/ --min-depth 1 --max-depth 1 --type d | fzf)
+    selected=$(fd . $HOME/work_repos/ $HOME/repos $HOME/ --min-depth 1 --max-depth 1 --type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
