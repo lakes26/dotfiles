@@ -11,10 +11,14 @@ link() {
     ln -s $src $dst
 }
 
+
+# ZSH
+link $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+
+link $HOME/.dotfiles/zsh/custom/alias.zsh $HOME/.oh-my-zsh/custom/alias.zsh
+link $HOME/.dotfiles/zsh/custom/environment.zsh $HOME/.oh-my-zsh/custom/environment.zsh
+
 # files
-link $HOME/.dotfiles/.zshrc $HOME/.zshrc
-link $HOME/.dotfiles/.yabairc $HOME/.yabairc
-link $HOME/.dotfiles/.skhdrc $HOME/.skhdrc
 link $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
 # .config

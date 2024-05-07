@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 ZSH="$HOME/.oh-my-zsh"
@@ -103,8 +103,6 @@ done
 #   export EDITOR='mvim'
 # fi
 
-VIM="nvim"
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -116,6 +114,4 @@ VIM="nvim"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias n=nvim
-alias t=tmux
-alias tms=tmux-sessionizer
+
