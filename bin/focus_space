@@ -1,20 +1,23 @@
 #!/usr/bin/env zsh
 
+get_space_index()
+{
+    echo $(yabai -m query --spaces --space $1 | jq '.index') 
+}
+
 # Check correct number of arguments
-if [ $# -eq 0 ];
-then
+if [ $# -eq 0 ]; then
   echo "$0: Missing arguments"
   exit 1
-elif [ $# -gt 2 ];
-then
+elif [ $# -gt 2 ]; then
   echo "$0: Too many arguments: $@"
   exit 1
 fi
 
 # Run the yabai switch space command (returns some string output if not possible)
-ERROR=$(yabai -m space --focus $1 2>&1)
+ERROR=$( yabai -m space --focus $1 2>&1 )
 
 # If Error in yabai space switch, fallback to system space switch
 if [[ -n $ERROR ]]; then
-    skhd --key "ctrl - $1"
+    skhd --key "ctrl - $( get_space_index $1 )"
 fi
