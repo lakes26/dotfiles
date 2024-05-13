@@ -1,3 +1,4 @@
+.congig/nvim/lua/google_plugins/*
 .config/zsh/zsh_private/*
 !.gitkeep
 TODO.md
