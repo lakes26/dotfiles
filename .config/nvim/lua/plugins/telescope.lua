@@ -43,7 +43,7 @@ return {
         { "<leader>sb", function() require('telescope.builtin').buffers({}) end,                                        desc = "Search for files in opened buffers" },
         { "<leader>sg", function() require('telescope.builtin').live_grep({}) end,                                      desc = "Search for string in files" },
         { "<leader>sG", function() require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') }) end, desc = "Search for current word in files" },
-        { "<leader>sg", function() require('telescope.builtin').help_tags({}) end,                                      desc = "Search help" },
+        { "<leader>sh", function() require('telescope.builtin').help_tags({}) end,                                      desc = "Search help" },
         { "<leader>sd", function() require('telescope.builtin').diagnostics({}) end,                                    desc = "Search diagnostics" },
         { "<leader>sr", function() require('telescope.builtin').lsp_references({}) end,                                 desc = "Search LSP references" },
         { "<leader>st", function() require('telescope.builtin').git_files({}) end,                                      desc = "Search git repository" },

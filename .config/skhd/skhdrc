@@ -40,21 +40,24 @@ shift + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7
 shift + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8
 shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
+# stack navigation
+alt - n : yabai -m window --focus stack.next 
+alt - p : yabai -m window --focus stack.prev 
+
 # focus next / previous desktop
-alt - n : yabai -m space --focus next || yabai -m space --focus first
-alt - p : yabai -m space --focus prev || yabai -m space --focus last
-shift + alt - n : yabai -m space --focus prev || yabai -m space --focus last
+shift + alt - n : yabai -m space --focus next || yabai -m space --focus first
+shift + alt - p : yabai -m space --focus prev || yabai -m space --focus last
 
 # focus desktop
-alt - 1 : yabai -m space --focus 1
-alt - 2 : yabai -m space --focus 2
-alt - 3 : yabai -m space --focus 3
-alt - 4 : yabai -m space --focus 4
-alt - 5 : yabai -m space --focus 5
-alt - 6 : yabai -m space --focus 6
-alt - 7 : yabai -m space --focus 7
-alt - 8 : yabai -m space --focus 8
-alt - 9 : yabai -m space --focus 9
+alt - 1 : go_to_space 1
+alt - 2 : go_to_space 2
+alt - 3 : go_to_space 3
+alt - 4 : go_to_space 4
+alt - 5 : go_to_space 5
+alt - 6 : go_to_space 6
+alt - 7 : go_to_space 7
+alt - 8 : go_to_space 8
+alt - 9 : go_to_space 9
 
 # fast focus desktop
 alt - 0 : yabai -m space --focus recent
