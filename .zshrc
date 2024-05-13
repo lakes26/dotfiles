@@ -63,7 +63,7 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM="$HOME/.zsh_custom"
+ZSH_CUSTOM="$HOME/.config/zsh/zsh_custom"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -83,7 +83,7 @@ if [ "-z $TMUX" ]; then
 fi
 
 # source private config
-for file in $HOME/.zshrc_private/*; do
+for file in $HOME/config/zsh/zsh_private/*; do
     if [[ -f $file && -r $file ]]; then
         source $file
     fi
