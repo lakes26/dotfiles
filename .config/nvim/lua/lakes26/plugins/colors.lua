@@ -5,7 +5,6 @@ return {
         require('catppuccin').setup({
             -- TODO: setup catppuccin
         })
-        
         vim.cmd.colorscheme "catppuccin"
     end,
 }
