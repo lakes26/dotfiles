@@ -63,14 +63,14 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM="$HOME/.config/zsh/zsh_custom"
+ZSH_CUSTOM="$HOME/.config/zsh/custom"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +83,8 @@ if [ "-z $TMUX" ]; then
 fi
 
 # source private config
-for file in $HOME/config/zsh/zsh_private/*; do
+setopt nullglob
+for file in $HOME/.config/zsh/private/*; do
     if [[ -f $file && -r $file ]]; then
         source $file
     fi
@@ -115,3 +116,7 @@ done
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/postgresql@15/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@15/include"
+export PKG_CONFIG_PATH="/usr/local/opt/postgresql@15/lib/pkgconfig"
