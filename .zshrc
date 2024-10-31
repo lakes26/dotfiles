@@ -70,6 +70,7 @@ ZSH_CUSTOM="$HOME/.config/zsh/custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME submodule update --init
 plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
